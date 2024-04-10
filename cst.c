@@ -9,10 +9,8 @@ CstGeneric* cst_create_generic(unsigned lineno, CstKind kind, const char* nodena
   va_list count;
   va_copy(count, childs);
   unsigned nchild = 0;
-  Cst* child;
-  while ((child = va_arg(count, Cst*))) {
+  while (va_arg(count, Cst*))
     ++nchild;
-  }
   va_end(count);
   CstGeneric* cst = (CstGeneric*)safe_alloc(sizeof (CstGeneric) + nchild * sizeof (Cst*));
   cst->nchild = nchild;
