@@ -22,6 +22,7 @@ ELSE    else
 
 SEMI    ;
 COMMA   ,
+DOT     \.
 
 ASSIGN  =
 ADD     \+
@@ -70,6 +71,7 @@ ERROR   .
 
 {SEMI}    { yylval.cst = pstate_appendcst(parser_state, cst_create_noattrtoken(yylineno, make_cstkind(SEMI))); return SEMI; }
 {COMMA}   { yylval.cst = pstate_appendcst(parser_state, cst_create_noattrtoken(yylineno, make_cstkind(COMMA))); return COMMA; }
+{DOT}     { yylval.cst = pstate_appendcst(parser_state, cst_create_noattrtoken(yylineno, make_cstkind(DOT))); return DOT; }
 {ASSIGN}  { yylval.cst = pstate_appendcst(parser_state, cst_create_noattrtoken(yylineno, make_cstkind(ASSIGN))); return ASSIGN; }
 
 {ADD}     { yylval.cst = pstate_appendcst(parser_state, cst_create_noattrtoken(yylineno, make_cstkind(ADD))); return ADD; }
