@@ -103,7 +103,6 @@ ERROR   .
 
 {SPACE}   {}
 {COMMENT} {}
-{ERROR}   { ++parser_state->nerror;
-            mycc_error("A", yylineno, "mysterious character '%s'", yytext); }
+{ERROR}   { mycc_error("A", yylineno, "mysterious character '%s'", yytext); }
 
 
